@@ -1,0 +1,49 @@
+<html>
+    <head lang="en">
+		<meta charset="utf-8">
+		<title>Home</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+        <body>
+			<div class="header">
+				<h2>Sõnamängu tutvustus ja reeglid</h2>
+			</div>
+			<div class="introduction">
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+			when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+			It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+			</p>
+			</div>
+			<form method="POST">
+			  <div class="input-group">
+				  <label>Kasutajanimi:</label>
+				  <input id="name" type="text" />
+				  <input type="button" value="Alusta mängu" onclick="location.href='index.html'">
+				  <input type="button" value="Save" onclick="insert()" />
+				  <input type="button" value="Show data" onclick="show()" />
+			</form>
+			<div id="display"></div>
+		
+		<script>
+			var names = [];
+			var nameInput = document.getElementById("name");
+			var messageBox  = document.getElementById("display");
+			
+			function insert ( ) {
+			 names.push( nameInput.value );
+			 clearAndShow();
+			}
+			
+			function clearAndShow () {
+			  nameInput.value = "";
+			  messageBox.innerHTML = "";
+
+			  messageBox.innerHTML += "Names: " + names.join(",") + "<br/>";
+			}	
+		</script>
+		<div class="footer">
+			<p>Töö autorid: Maritana Sampu, Katri Palo, Kaidi-Liis Liim</p>
+		</div>
+       </body>
+
+</html>
